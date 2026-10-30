@@ -35,10 +35,10 @@ Status legend:
 ### 1.1 Project Foundation
 
 #### 1.1.1 React 19 + Vite Environment
-- [ ] Initialize a Vite React application.
-- [ ] Verify React 19 dependencies.
-- [ ] Configure createRoot() and StrictMode.
-- [ ] Verify the development server runs.
+- [x] Initialize a Vite React application.
+- [x] Verify React 19 dependencies.
+- [x] Configure createRoot() and StrictMode.
+- [x] Verify the development server runs.
 
 #### 1.1.2 Project Governance Rules
 - [x] Create project-rules.md.
@@ -132,15 +132,14 @@ Status legend:
 
 ## 4. Current Progress
 
-Current checkpoint: 04 — Project Governance Rules
+Current checkpoint: 05 — React 19 + Vite Environment
 
 Completed:
-- Initial task decomposition.
-- Shared Git repository initialization.
-- GitHub remote configuration and first push.
-- WBS 1.1.2 governance documentation.
+- Initial task decomposition and repository setup.
+- WBS 1.1.2 — Project Governance Rules.
+- WBS 1.1.1 — React 19 + Vite Environment.
 
-Next checkpoint: 05 — React 19 + Vite Environment
+Next checkpoint: 06 — Component Contracts (WBS 1.1.3)
 
 ## 5. Progress Log
 
@@ -180,5 +179,23 @@ Completed:
 
 Verification:
 - File exists and contains the required sections.
+
+Commit: Pending
+
+### Entry 004 — React 19 Environment
+
+WBS mapping: 1.1.1
+
+Completed:
+- Initialized the Vite React application.
+- Installed dependencies.
+- Configured React 19 createRoot and StrictMode.
+- Verified the development server.
+
+Verification:
+- npm run dev: PASS
+- npm run lint: PASS
+- npm run build: PASS
+- React version: 19.x.x
 
 Commit: Pending
