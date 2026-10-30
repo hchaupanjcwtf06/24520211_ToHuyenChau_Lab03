@@ -55,26 +55,26 @@ Status legend:
 ### 1.2 Profile Component Package
 
 #### 1.2.1 DeveloperCard Component
-- [ ] Implement a functional component.
-- [ ] Use article, header, hgroup and heading.
-- [ ] Ensure zero div elements.
+- [x] Implement a functional component.
+- [x] Use article, header, hgroup and heading.
+- [x] Ensure zero div elements.
 
 #### 1.2.2 SkillBadge Component
-- [ ] Implement reusable SkillBadge.
-- [ ] Render skill data with stable IDs.
-- [ ] Integrate badges into the profile.
+- [x] Implement reusable SkillBadge.
+- [x] Render skill data with stable IDs.
+- [x] Integrate badges into the profile.
 
 #### 1.2.3 Semantic Profile Data
-- [ ] Display profile identity and role.
-- [ ] Render metrics using dl, dt and dd.
-- [ ] Use keyed Fragments for metric pairs.
-- [ ] Render an accessible skills list.
+- [x] Display profile identity and role.
+- [x] Render metrics using dl, dt and dd.
+- [x] Use keyed Fragments for metric pairs.
+- [x] Render an accessible skills list.
 
 #### 1.2.4 Avatar & Fallback
-- [ ] Use an HTTPS image source.
-- [ ] Define alt text and image dimensions.
-- [ ] Implement fallback initials.
-- [ ] Verify fallback behavior.
+- [x] Use an HTTPS image source.
+- [x] Define alt text and image dimensions.
+- [x] Implement fallback initials.
+- [x] Verify fallback behavior.
 
 ### 1.3 Presentation Package
 
@@ -217,5 +217,74 @@ Completed:
 Verification:
 - Contract documentation completed.
 - Runtime verification pending implementation.
+
+Commit: Pending
+
+### Entry 006 — DeveloperCard Semantic Skeleton
+
+WBS mapping: 1.2.1 (initial implementation)
+
+Completed:
+- Created src/components/DeveloperCard.jsx.
+- Implemented a pure functional component.
+- Integrated DeveloperCard into App.jsx.
+- Established semantic article/header/hgroup structure.
+
+Verification:
+- Development server: PASS
+- Zero div source check: PASS
+- ESLint: PASS
+- Production build: PASS
+
+Commit: Pending integration with SkillBadge.
+
+### Entry 007 — SkillBadge Integration
+
+WBS mapping: 1.2.2
+
+Completed:
+- Created reusable SkillBadge.jsx.
+- Integrated SkillBadge into DeveloperCard.
+- Rendered skills using stable IDs.
+
+Verification:
+- Three default skills displayed successfully.
+
+Commit: Pending completion of semantic profile package.
+
+### Entry 008 — Semantic Profile Data
+
+WBS mapping: 1.2.3
+
+Completed:
+- Added default profile metrics.
+- Rendered metrics with dl/dt/dd.
+- Implemented Object.entries() mapping.
+- Used keyed Fragments for metric pairs.
+- Preserved the accessible skills list.
+
+Verification:
+- Profile name and role displayed.
+- Three metrics displayed correctly.
+- Skills list displayed correctly.
+
+Commit: Pending completion of profile package.
+
+### Entry 009 — HTTPS Avatar & Fallback
+
+WBS mapping: 1.2.4
+
+Completed:
+- Integrated HTTPS avatar.
+- Added descriptive alt text.
+- Defined explicit image dimensions.
+- Implemented initials fallback using React useState.
+- Verified behavior with an intentionally invalid URL.
+
+Verification:
+- Profile content: PASS
+- Avatar dimensions: PASS
+- Fallback initials: PASS
+- Zero div elements: Pending final source audit
 
 Commit: Pending
