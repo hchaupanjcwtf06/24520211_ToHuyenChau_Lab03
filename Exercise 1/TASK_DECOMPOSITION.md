@@ -88,10 +88,11 @@ Status legend:
 - [ ] Style metadata and skill badges.
 - [ ] Verify consistent presentation.
 
-#### 1.3.3 Responsive Layout
-- [ ] Support a 375px viewport.
-- [ ] Prevent horizontal overflow.
-- [ ] Prevent content overlap.
+#### 1.1.3 Component Contracts
+- [x] Define DeveloperCard props and default values.
+- [x] Define SkillBadge props.
+- [x] Define metrics and skills data structures.
+- [x] Document component acceptance criteria.
 
 ### 1.4 Quality Assurance Package
 
@@ -132,14 +133,17 @@ Status legend:
 
 ## 4. Current Progress
 
-Current checkpoint: 05 — React 19 + Vite Environment
+## 4. Current Progress
+
+Current checkpoint: 06 — Component Contracts
 
 Completed:
-- Initial task decomposition and repository setup.
-- WBS 1.1.2 — Project Governance Rules.
+- Repository and governance setup.
 - WBS 1.1.1 — React 19 + Vite Environment.
+- WBS 1.1.2 — Project Governance Rules.
+- WBS 1.1.3 — Component Contracts.
 
-Next checkpoint: 06 — Component Contracts (WBS 1.1.3)
+Next checkpoint: 07 — DeveloperCard Semantic Structure
 
 ## 5. Progress Log
 
@@ -197,5 +201,21 @@ Verification:
 - npm run lint: PASS
 - npm run build: PASS
 - React version: 19.x.x
+
+Commit: Pending
+
+### Entry 005 — Component Contracts
+
+WBS mapping: 1.1.3
+
+Completed:
+- Defined DeveloperCard props and default values.
+- Defined reusable SkillBadge props.
+- Defined metrics and skills schemas.
+- Documented accessibility and acceptance criteria.
+
+Verification:
+- Contract documentation completed.
+- Runtime verification pending implementation.
 
 Commit: Pending
