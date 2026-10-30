@@ -41,10 +41,10 @@ Status legend:
 - [ ] Verify the development server runs.
 
 #### 1.1.2 Project Governance Rules
-- [ ] Create project-rules.md.
-- [ ] Define semantic HTML and accessibility rules.
-- [ ] Document forbidden legacy APIs.
-- [ ] Define Git and verification rules.
+- [x] Create project-rules.md.
+- [x] Define semantic HTML and accessibility rules.
+- [x] Document forbidden legacy APIs.
+- [x] Define Git and verification rules.
 
 #### 1.1.3 Component Contracts
 - [ ] Define DeveloperCard props and default values.
@@ -132,11 +132,15 @@ Status legend:
 
 ## 4. Current Progress
 
-Current checkpoint: 01 — Initial Task Decomposition
+Current checkpoint: 04 — Project Governance Rules
 
-Current work: Create the first decomposition file.
+Completed:
+- Initial task decomposition.
+- Shared Git repository initialization.
+- GitHub remote configuration and first push.
+- WBS 1.1.2 governance documentation.
 
-Next checkpoint: 02 — Project Foundation
+Next checkpoint: 05 — React 19 + Vite Environment
 
 ## 5. Progress Log
 
@@ -148,5 +152,33 @@ Planned:
 - Track verification and commits throughout Exercise 1.
 
 Verification: Pending
+
+Commit: Pending
+
+### Entry 002 — Repository Foundation
+
+WBS mapping: 1.5.2 (partial)
+
+Completed:
+- Initialized one Git repository for all three exercises.
+- Created the Exercise 1/2/3 directory structure.
+- Created and pushed the initial task decomposition.
+
+Evidence:
+- Initial commit: f1cb794
+- Branch: main
+- Local and remote synchronized
+
+### Entry 003 — Governance Rules
+
+WBS mapping: 1.1.2
+
+Completed:
+- Created project-rules.md.
+- Documented stack, forbidden APIs, semantic HTML,
+  accessibility, CSS Modules and verification rules.
+
+Verification:
+- File exists and contains the required sections.
 
 Commit: Pending
