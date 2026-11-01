@@ -1,6 +1,7 @@
 
 import { Fragment, useState } from 'react'
 import { SkillBadge } from './SkillBadge.jsx'
+import styles from './DeveloperCard.module.css'
 
 const DEFAULT_METRICS = {
   commits: 512,
@@ -39,8 +40,8 @@ export function DeveloperCard({
   const showFallback = !avatarUrl || failedAvatarUrl === avatarUrl
 
   return (
-    <article aria-labelledby="dev-heading">
-      <header>
+    <article className={styles.card} aria-labelledby="dev-heading">
+      <header className={styles.header}>
         {showFallback ? (
           <span role="img" aria-label={`Avatar initials for ${fullName}`}>
             {getInitials(fullName)}
@@ -61,7 +62,7 @@ export function DeveloperCard({
         </hgroup>
       </header>
 
-      <dl>
+      <dl className={styles.metrics}>
         {Object.entries(metrics).map(([key, value]) => (
           <Fragment key={key}>
             <dt>{key}</dt>
@@ -70,7 +71,7 @@ export function DeveloperCard({
         ))}
       </dl>
 
-      <ul aria-label="Engineered Skills">
+      <ul className={styles.skills} aria-label="Engineered Skills">
         {skills.map((skill) => (
           <li key={skill.id}>
             <SkillBadge name={skill.name} tier={skill.tier} />
