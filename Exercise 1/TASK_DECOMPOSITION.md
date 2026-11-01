@@ -96,22 +96,22 @@ Status legend:
 ### 1.4 Quality Assurance Package
 
 #### 1.4.1 Semantic & Accessibility Audit
-- [ ] Verify zero div tags in DeveloperCard.
-- [ ] Inspect semantic DOM structure.
-- [ ] Inspect the Accessibility Tree.
-- [ ] Save verification screenshots.
+- [x] Verify zero div tags in DeveloperCard.
+- [x] Inspect semantic DOM structure.
+- [x] Inspect the Accessibility Tree.
+- [x] Save verification screenshots.
 
 #### 1.4.2 Media Security & Stability Audit
-- [ ] Verify HTTPS-only media.
-- [ ] Verify image dimensions.
-- [ ] Test avatar fallback.
-- [ ] Save verification screenshots.
+- [x] Verify HTTPS-only media.
+- [x] Verify image dimensions.
+- [x] Test avatar fallback.
+- [x] Save verification screenshots.
 
 #### 1.4.3 Responsive & Runtime Audit
-- [ ] Test the 375px viewport.
-- [ ] Check for horizontal overflow.
-- [ ] Inspect browser console errors.
-- [ ] Save verification screenshots.
+- [x] Test the 375px viewport.
+- [x] Check for horizontal overflow.
+- [x] Inspect browser console errors.
+- [x] Save verification screenshots.
 
 ### 1.5 Delivery Package
 
@@ -361,3 +361,74 @@ Verification:
 - Production build: PASS.
 
 Commit: Pending
+
+### Entry 014 — Semantic & Accessibility Audit
+
+WBS mapping: 1.4.1
+
+Completed:
+- Verified zero div tags in DeveloperCard.jsx.
+- Inspected semantic DOM elements.
+- Verified article accessible name and heading.
+- Inspected Accessibility Tree.
+
+Evidence:
+- evidence/screenshots/01_zero_div_audit.png
+- evidence/screenshots/02_semantic_dom.png
+- evidence/screenshots/03_accessibility_tree.png
+
+Verification:
+- Zero Div-Soup: PASS
+- Semantic DOM: PASS
+- Accessibility Tree: PASS
+
+Commit: Pending QA evidence review.
+
+### Entry 015 — Media Security & Stability Audit
+
+WBS mapping: 1.4.2
+
+Completed:
+- Verified the avatar uses an HTTPS URL.
+- Inspected explicit image width and height.
+- Verified descriptive avatar alt text.
+- Tested initials fallback with an invalid image URL.
+- Restored the original avatar URL.
+
+Evidence:
+- evidence/screenshots/04_https_audit.png
+- evidence/screenshots/05_avatar_dimensions.png
+- evidence/screenshots/06_avatar_fallback.png
+
+Verification:
+- HTTPS source check: PASS
+- Avatar dimensions: PASS (64x64)
+- Avatar fallback: PASS
+- Original avatar restored: PASS
+
+Commit: Pending QA evidence review.
+
+### Entry 016 — Responsive & Runtime Audit
+
+WBS mapping: 1.4.3
+
+Completed:
+- Verified the 375px responsive layout.
+- Checked horizontal overflow.
+- Inspected runtime console messages.
+- Verified ESLint and production build.
+
+Evidence:
+- evidence/screenshots/07_responsive_375px.png
+- evidence/screenshots/08_no_horizontal_overflow.png
+- evidence/screenshots/09_runtime_console.png
+- evidence/screenshots/10_lint_build.png
+
+Verification:
+- Responsive 375px: PASS
+- Horizontal overflow: PASS (false)
+- React runtime: PASS
+- ESLint: PASS
+- Production build: PASS
+
+Commit: Pending QA evidence review.
