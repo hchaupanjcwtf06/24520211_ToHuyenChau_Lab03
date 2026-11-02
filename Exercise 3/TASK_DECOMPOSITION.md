@@ -27,17 +27,17 @@ Source: Lab 03, Slides 21–23.
 ### 3.2 Telemetry Data & Service
 
 #### 3.2.1 Squad Dataset
-- [ ] Define the PUBG_VN_SQUADS dataset.
-- [ ] Include CES, TE, and GE with stable IDs.
-- [ ] Preserve the telemetry fields from the provided specification.
+- [x] Define the PUBG_VN_SQUADS dataset.
+- [x] Include CES, TE, and GE with stable IDs.
+- [x] Preserve the telemetry fields from the provided specification.
 
 #### 3.2.2 Simulated Telemetry Service
-- [ ] Implement an asynchronous telemetry request.
-- [ ] Simulate network latency.
-- [ ] Simulate a 35% packet-loss probability.
-- [ ] Support AbortSignal cancellation.
-- [ ] Reject aborted requests with AbortError.
-- [ ] Separate telemetry logic from React rendering.
+- [x] Implement an asynchronous telemetry request.
+- [x] Simulate network latency.
+- [x] Simulate a 35% packet-loss probability.
+- [x] Support AbortSignal cancellation.
+- [x] Reject aborted requests with AbortError.
+- [x] Separate telemetry logic from React rendering.
 
 ### 3.3 Four-State Telemetry Machine
 
@@ -174,3 +174,26 @@ Next:
 - Implement the four-state telemetry machine.
 
 Status: Complete
+
+
+### Entry 003 — Telemetry Dataset & Service
+
+WBS mapping: 3.2.1, 3.2.2
+
+Completed:
+- Added three PUBG Vietnam squad records.
+- Implemented simulated telemetry latency.
+- Implemented 35% packet-loss probability.
+- Added AbortSignal handling and timer cleanup.
+- Separated data/service logic from UI.
+
+Verification:
+- Source implementation reviewed.
+- Runtime abort verification: Pending.
+- ESLint: Pending.
+
+Next:
+- Implement the four-state React telemetry machine.
+- Integrate squad switching and cancellation.
+
+Status: Implemented, awaiting runtime verification
