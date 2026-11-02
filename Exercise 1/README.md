@@ -1,16 +1,53 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Exercise 1 — Semantic Engineer & Pro-Gamer Profile Card
 
-Currently, two official plugins are available:
+## Overview
+A semantic and responsive developer profile built with React 19 and Vite, following Lab 03 requirements.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technology Stack
+- React 19
+- Vite
+- JavaScript (JSX)
+- CSS Modules
+- CSS Custom Properties
+- ESLint
 
-## React Compiler
+## Implemented Features
+- Semantic DeveloperCard component
+- Reusable SkillBadge component
+- Accessible profile metadata using dl/dt/dd
+- Stable React keys and keyed Fragments
+- HTTPS avatar with 64x64 dimensions
+- Initials fallback for failed avatar loading
+- Responsive layout supporting 375px
+- Zero div elements inside DeveloperCard
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Run Locally
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+## Verification
+- Semantic DOM: PASS
+- Accessibility Tree: PASS
+- Zero Div-Soup: PASS
+- Avatar HTTPS and fallback: PASS
+- Responsive 375px: PASS
+- Horizontal overflow: PASS
+- ESLint: PASS
+- Production build: PASS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Evidence
+Screenshots are stored in evidence/screenshots.
+
+A consolidated PDF contains the Exercise 1 verification evidence.
+
+## Documentation
+- TASK_DECOMPOSITION.md
+- COMPONENT_CONTRACTS.md
+- project-rules.md
+- ../AI_FAILURE_AUDIT.md
+
+## Git
+Exercise 1 follows atomic commits, including the two required feature and styling commits.

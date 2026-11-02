@@ -125,10 +125,10 @@ Status legend:
 - [ ] Verify git log against completed work.
 
 #### 1.5.3 Verification Evidence
-- [ ] Update AI_FAILURE_AUDIT.md using real findings.
-- [ ] Collect screenshot evidence.
-- [ ] Combine Exercise 1 screenshots into one PDF.
-- [ ] Verify all WBS acceptance criteria.
+- [x] Update AI_FAILURE_AUDIT.md using real findings.
+- [x] Collect screenshot evidence.
+- [] Combine Exercise 1 screenshots into one PDF.
+- [] Verify all WBS acceptance criteria.
 
 ## 4. Current Progress
 
@@ -432,3 +432,38 @@ Verification:
 - Production build: PASS
 
 Commit: Pending QA evidence review.
+
+### Entry 017 — AI Failure Audit
+
+WBS mapping: 1.5.3
+
+Completed:
+- Created AI_FAILURE_AUDIT.md.
+- Documented observed CSS Module integration failures.
+- Identified the metrics layout risk.
+- Distinguished confirmed failures from potential defects.
+
+Verification:
+- AF-01: Resolved.
+- AF-02: Resolved, related to AF-01.
+- AF-03: Pending runtime validation.
+
+Commit: Pending
+
+### Entry 018 — Metrics Grid Risk Verification
+
+WBS mapping: 1.4.3, 1.5.3
+
+Completed:
+- Reviewed metric label-value correspondence.
+- Confirmed the existing responsive test results.
+- Updated the shared AI_FAILURE_AUDIT.md.
+
+Verification:
+- Default metrics: PASS
+- Responsive 375px: PASS
+- Horizontal overflow: PASS
+- AF-03: Potential risk, not reproduced
+
+Code changes: None
+Commit: Pending
