@@ -223,3 +223,48 @@ Next:
 - Search, numeric IQ filter and immutable sorting.
 
 Commit: Pending
+
+### Entry 004 — Search, IQ Filter & Sorting
+
+WBS mapping: 2.2.2, 2.3.1–2.3.3
+
+Completed:
+- Implemented query, minIq and sortBy states.
+- Added case-insensitive name search.
+- Added numeric IQ filtering with valueAsNumber.
+- Added immutable sorting using toSorted().
+- Connected accessible labels using useId().
+- Calculated visiblePeople during render.
+- Avoided useEffect-based derived state.
+
+Verification:
+- Search: PASS
+- IQ Filter: PASS
+- IQ Sorting: PASS
+- Age Sorting: PASS
+- ESLint: PASS
+- Production Build: PASS
+
+Next:
+- Delete, Reset and Live Status.
+
+### Entry 005 — Minimum IQ Input Fix
+
+WBS mapping: 2.3.2
+
+Issue:
+- Emptying the controlled number input immediately
+  restored 0, causing leading-zero input such as 0200.
+
+Fix:
+- Allow an empty input value temporarily.
+- Continue using valueAsNumber for numeric values.
+- Skip the IQ threshold when the input is empty.
+
+Verification:
+- Empty input: PASS
+- Re-entering 200: PASS
+- Numeric filtering: PASS
+- Spinner controls: PASS
+
+Commit: Pending feature commit.
