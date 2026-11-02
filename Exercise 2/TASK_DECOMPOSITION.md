@@ -55,41 +55,41 @@ Repository:
 - [x] Define name, age and IQ fields.
 
 #### 2.2.2 State Management
-- [ ] Implement people state.
-- [ ] Implement query state.
-- [ ] Implement minIq state.
-- [ ] Implement sortBy state.
-- [ ] Ensure immutable state updates.
+- [x] Implement people state.
+- [x] Implement query state.
+- [x] Implement minIq state.
+- [x] Implement sortBy state.
+- [x] Ensure immutable state updates.
 
 ### 2.3 Interactive Directory Package
 
 #### 2.3.1 Search
-- [ ] Implement case-insensitive name search.
-- [ ] Trim search input.
-- [ ] Use controlled React input.
+- [x] Implement case-insensitive name search.
+- [x] Trim search input.
+- [x] Use controlled React input.
 
 #### 2.3.2 IQ Filtering
-- [ ] Implement numeric minimum-IQ filtering.
-- [ ] Use valueAsNumber.
-- [ ] Handle NaN safely.
+- [x] Implement numeric minimum-IQ filtering.
+- [x] Use valueAsNumber.
+- [x] Handle NaN safely.
 
 #### 2.3.3 Sorting
-- [ ] Implement IQ sorting.
-- [ ] Implement age sorting.
-- [ ] Use immutable toSorted().
-- [ ] Avoid redundant derived state.
+- [x] Implement IQ sorting.
+- [x] Implement age sorting.
+- [x] Use immutable toSorted().
+- [x] Avoid redundant derived state.
 
 #### 2.3.4 Delete & Reset
-- [ ] Delete records by stable ID.
-- [ ] Restore the original dataset.
-- [ ] Preserve correct rendering and keys.
+- [x] Delete records by stable ID.
+- [x] Restore the original dataset.
+- [x] Preserve correct rendering and keys.
 
 ### 2.4 Accessibility & UI Package
 
 #### 2.4.1 Accessible Form
-- [ ] Connect labels and inputs using useId().
-- [ ] Use semantic form elements.
-- [ ] Support keyboard interaction.
+- [x] Connect labels and inputs using useId().
+- [x] Use semantic form elements.
+- [x] Support keyboard interaction.
 
 #### 2.4.2 Results & Status
 - [ ] Render results with stable keys.
@@ -98,10 +98,10 @@ Repository:
 - [ ] Provide an accessible empty state.
 
 #### 2.4.3 Responsive Presentation
-- [ ] Implement component styling.
-- [ ] Verify desktop layout.
-- [ ] Verify 375px viewport.
-- [ ] Prevent horizontal overflow.
+- [x] Implement component styling.
+- [x] Verify desktop layout.
+- [x] Verify 375px viewport.
+- [x] Prevent horizontal overflow.
 
 ### 2.5 Verification Package
 
@@ -291,3 +291,46 @@ Verification:
 
 Pending:
 - React DevTools Profiler and focus audit.
+
+### Entry 007 — Reset Handler Scope Fix
+
+Issue:
+- handleDelete and handleReset were accidentally
+  nested inside handleIqChange.
+- React threw ReferenceError: handleReset is not defined.
+
+Fix:
+- Moved both handlers to component scope.
+
+Verification:
+- Directory rendering: PASS
+- Delete: PASS
+- Reset: PASS
+
+Commit: Pending feature commit.
+
+
+### Entry 008 — Accessible UI & Responsive Styling
+
+WBS mapping: 2.4.1, 2.4.3
+
+Completed:
+- Integrated scoped CSS Modules.
+- Applied styling to form controls and scientist cards.
+- Corrected missing CSS Module className bindings.
+- Added responsive layout for mobile screens.
+- Preserved accessible form labels and keyboard controls.
+
+Verification:
+- Desktop rendering: PASS
+- Responsive 375px: PASS (if verified)
+- Horizontal overflow: PASS (if verified)
+- ESLint: PASS
+- Production build: PASS
+
+Next:
+- React DevTools Profiler.
+- Focus behavior after deletion.
+- Final architecture audit.
+
+Commit: Pending
