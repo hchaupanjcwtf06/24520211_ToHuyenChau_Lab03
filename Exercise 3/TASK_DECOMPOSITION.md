@@ -14,15 +14,15 @@ Source: Lab 03, Slides 21–23.
 
 #### 3.1.1 Repository Structure
 - [x] Create Exercise 3 inside the shared Lab 03 repository.
-- [ ] Initialize a React 19 + Vite project.
+- [x] Initialize a React 19 + Vite project.
 - [x] Create a dedicated evidence/screenshots directory.
-- [ ] Confirm project independence from Exercises 1 and 2.
+- [x] Confirm project independence from Exercises 1 and 2.
 
 #### 3.1.2 Engineering Rules
-- [ ] Create project-rules.md.
-- [ ] Define component contracts.
-- [ ] Establish accessibility and state-management rules.
-- [ ] Define commit and verification requirements.
+- [x] Create project-rules.md.
+- [x] Define component contracts.
+- [x] Establish accessibility and state-management rules.
+- [x] Define commit and verification requirements.
 
 ### 3.2 Telemetry Data & Service
 
@@ -156,3 +156,21 @@ Next:
 - Create COMPONENT_CONTRACTS.md.
 
 Status: In Progress
+
+### Entry 002 — Engineering Foundation
+
+WBS mapping: 3.1.1, 3.1.2
+
+Completed:
+- Created engineering rules.
+- Defined telemetry service and component contracts.
+- Initialized React 19 and Vite.
+- Installed project dependencies.
+- Verified the Vite development server.
+
+Next:
+- Implement squad dataset.
+- Implement abortable telemetry service.
+- Implement the four-state telemetry machine.
+
+Status: Complete
