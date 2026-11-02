@@ -42,22 +42,22 @@ Source: Lab 03, Slides 21–23.
 ### 3.3 Four-State Telemetry Machine
 
 #### 3.3.1 State Model
-- [ ] Define IDLE, LOADING, SUCCESS, and ERROR states.
-- [ ] Store data and error consistently.
-- [ ] Prevent contradictory UI states.
+- [x] Define IDLE, LOADING, SUCCESS, and ERROR states.
+- [x] Store data and error consistently.
+- [x] Prevent contradictory UI states.
 
 #### 3.3.2 Abortable Request Lifecycle
-- [ ] Implement useEffect-driven telemetry requests.
-- [ ] Create an AbortController for each request.
-- [ ] Abort previous requests when switching squads.
-- [ ] Abort in-flight requests during cleanup.
-- [ ] Ignore intentional AbortError exceptions.
-- [ ] Prevent stale responses from overwriting current data.
+- [x] Implement useEffect-driven telemetry requests.
+- [x] Create an AbortController for each request.
+- [x] Abort previous requests when switching squads.
+- [x] Abort in-flight requests during cleanup.
+- [x] Ignore intentional AbortError exceptions.
+- [x] Prevent stale responses from overwriting current data.
 
 #### 3.3.3 Squad Selection
-- [ ] Implement CES, TE, and GE selectors.
-- [ ] Trigger telemetry loading when selection changes.
-- [ ] Keep the active squad identifiable and accessible.
+- [x] Implement CES, TE, and GE selectors.
+- [x] Trigger telemetry loading when selection changes.
+- [x] Keep the active squad identifiable and accessible.
 
 ### 3.4 Loading, Success & Error UI
 
@@ -197,3 +197,51 @@ Next:
 - Integrate squad switching and cancellation.
 
 Status: Implemented, awaiting runtime verification
+
+
+### Entry 004 — Four-State Telemetry Machine
+
+WBS mapping: 3.3.1, 3.3.2, 3.3.3
+
+Completed:
+- Added PubgMatchTelemetry.
+- Implemented four-state view model.
+- Integrated abortable telemetry requests.
+- Implemented squad switching and cleanup.
+- Added functional retry recovery.
+- Added accessible squad selection buttons.
+
+Verification:
+- Squad selection: PASS (if manually verified)
+- Stale-response prevention: PASS (if manually verified)
+- Retry behavior: PASS (if manually verified)
+- Browser console: Pending
+- Slow 3G audit: Pending
+
+Next:
+- Implement 220px skeleton.
+- Style telemetry dashboard.
+- Finalize alert and retry UI.
+
+Status: Implemented, awaiting final audit
+
+### Entry 005 — State Machine ESLint Fix
+
+WBS mapping: 3.3.1, 3.3.2
+
+Completed:
+- Implemented four-state telemetry rendering.
+- Implemented AbortController cleanup.
+- Added stale-response protection using request identity.
+- Fixed react-hooks/set-state-in-effect violation.
+- Verified squad switching and retry behavior.
+
+Verification:
+- ESLint: PASS
+- Production build: PASS
+- React state update warning: Resolved
+
+Next:
+- Implement 220px skeleton radar.
+- Complete responsive telemetry dashboard.
+- Finalize error recovery UI.
