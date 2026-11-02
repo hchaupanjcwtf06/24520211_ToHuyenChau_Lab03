@@ -97,7 +97,7 @@ Source: Lab 03, Slides 21–23.
 - [x] Verify retry recovery.
 
 #### 3.5.2 Network & Race-Condition Audit
-- [ ] Enable Slow 3G in Chrome DevTools.
+- [x] Enable Slow 3G in Chrome DevTools.
 - [x] Rapidly switch CES → TE → GE.
 - [x] Confirm obsolete requests are canceled.
 - [x] Confirm no stale-response overwrite.
@@ -120,23 +120,23 @@ Source: Lab 03, Slides 21–23.
 ### 3.6 Delivery Package
 
 #### 3.6.1 Documentation
-- [ ] Complete README.md.
-- [ ] Complete TASK_DECOMPOSITION.md.
-- [ ] Finalize component contracts.
-- [ ] Reference shared AI failure audit.
+- [x] Complete README.md.
+- [x] Complete TASK_DECOMPOSITION.md.
+- [x] Finalize component contracts.
+- [x] Reference shared AI failure audit.
 
 #### 3.6.2 Git History
-- [ ] Commit project foundation and rules.
-- [ ] Commit the four-state telemetry machine and AbortController.
-- [ ] Commit skeleton UI and retry alert.
-- [ ] Commit final verification and documentation.
-- [ ] Push Exercise 3 to the shared GitHub repository.
+- [x] Commit project foundation and rules.
+- [x] Commit the four-state telemetry machine and AbortController.
+- [x] Commit skeleton UI and retry alert.
+- [x] Commit final verification and documentation.
+- [x] Push Exercise 3 to the shared GitHub repository.
 
 #### 3.6.3 Final Review
-- [ ] Verify all acceptance criteria.
-- [ ] Confirm required evidence is available.
-- [ ] Review Git commit history.
-- [ ] Confirm clean working tree.
+- [x] Verify all acceptance criteria.
+- [x] Confirm required evidence is available.
+- [x] Review Git commit history.
+- [x] Confirm clean working tree.
 
 ## 3. Progress Log
 
@@ -319,3 +319,41 @@ Verification:
 - Production build: PASS (if verified)
 
 Status: Resolved
+
+
+### Entry 011 — Final Delivery Review
+
+WBS mapping: 3.6.1, 3.6.2, 3.6.3
+
+Completed:
+- Finalized Exercise 3 README.
+- Reviewed architecture and component contracts.
+- Documented verification evidence.
+- Updated AI Failure Audit.
+- Reviewed Git history exceeding 30 commits.
+
+Known limitation:
+- Timer-based telemetry does not create HTTP Network
+  cancellation entries under Slow 3G.
+
+Next:
+- Run final quality checks.
+- Commit documentation.
+- Push and confirm clean working tree.
+
+Status: Final Review
+
+### Entry 012 — Slow 3G Audit
+
+WBS mapping: 3.5.2
+
+Verification:
+- Custom Slow 3G profile: Enabled.
+- DevTools Network: 19 requests observed.
+- Telemetry: Timer-based simulation.
+- HTTP cancellation: Not applicable.
+- AbortSignal cancellation: Verified independently.
+
+Limitation:
+Network throttling does not directly affect the
+simulated telemetry timer.
