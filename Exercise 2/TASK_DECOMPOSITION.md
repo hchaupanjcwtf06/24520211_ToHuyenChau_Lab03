@@ -38,14 +38,14 @@ Repository:
 ### 2.1 Project Foundation
 
 #### 2.1.1 React Environment
-- [ ] Initialize React 19 + Vite in Exercise 2.
-- [ ] Configure createRoot() and StrictMode.
-- [ ] Verify development server, lint and build.
+- [x] Initialize React 19 + Vite in Exercise 2.
+- [x] Configure createRoot() and StrictMode.
+- [x] Verify development server, lint and build.
 
 #### 2.1.2 Governance & Contracts
-- [ ] Define project rules.
-- [ ] Define ScientistDirectory component contract.
-- [ ] Define data schema and state contracts.
+- [x] Define project rules.
+- [x] Define ScientistDirectory component contract.
+- [x] Define data schema and state contracts.
 
 ### 2.2 Data & State Package
 
@@ -179,5 +179,25 @@ Completed:
 
 Verification:
 - Planning document prepared.
+
+Commit: Pending
+
+### Entry 002 — Environment & Contracts
+
+Completed:
+- Initialized React 19 + Vite.
+- Verified createRoot and StrictMode.
+- Created project-rules.md.
+- Defined ScientistDirectory contracts.
+- Defined scientist schema and state design.
+
+Verification:
+- React 19: PASS
+- ESLint: PASS
+- Production build: PASS
+- Development server: PASS
+
+Next:
+- Implement normalized scientist dataset.
 
 Commit: Pending
