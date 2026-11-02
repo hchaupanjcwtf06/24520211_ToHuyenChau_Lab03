@@ -1,16 +1,73 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Exercise 2 — Interactive Scientist & Pioneer Directory
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+An interactive React 19 directory for exploring
+scientists and historical pioneers.
 
-## React Compiler
+## Technology Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite
+- JavaScript ES2024
+- CSS Modules
+- React Hooks
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Case-insensitive name search
+- Numeric minimum-IQ filtering
+- Immutable sorting by IQ and age
+- Delete individual records
+- Reset the original dataset and controls
+- Accessible result counter
+- Empty-state feedback
+- Keyboard focus restoration after deletion
+- Responsive interface supporting 375px
+
+## Architecture
+
+Independent state:
+- people
+- query
+- minIq
+- sortBy
+
+Derived data:
+- visiblePeople
+
+The directory computes filtering and sorting
+during render without useEffect synchronization.
+
+The project uses stable IDs and immutable
+state updates.
+
+## Running Locally
+
+From the Exercise 2 directory:
+
+1. npm install
+2. npm run dev
+
+## Verification
+
+- Search, filter and sorting: PASS
+- Delete and Reset: PASS
+- Live status: PASS
+- React Profiler: PASS
+- Keyboard focus after deletion: PASS
+- ESLint: PASS
+- Production build: PASS
+
+## Evidence
+
+Verification screenshots are stored in
+evidence/screenshots/.
+
+## Documentation
+
+- TASK_DECOMPOSITION.md
+- COMPONENT_CONTRACTS.md
+- project-rules.md
+- ../AI_FAILURE_AUDIT.md

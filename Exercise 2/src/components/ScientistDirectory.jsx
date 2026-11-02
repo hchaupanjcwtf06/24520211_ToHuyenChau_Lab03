@@ -1,5 +1,4 @@
-
-import { useId, useState } from 'react'
+import { useId, useLayoutEffect, useRef, useState } from 'react'
 import { SMART_PEOPLE } from '../data/scientists.js'
 import styles from './ScientistDirectory.module.css'
 
@@ -14,6 +13,9 @@ export function ScientistDirectory({
   const [query, setQuery] = useState('')
   const [minIq, setMinIq] = useState(160)
   const [sortBy, setSortBy] = useState('iq-desc')
+  const deleteButtonRefs = useRef(new Map())
+  const pendingFocusId = useRef(null)
+  const resetButtonRef = useRef(null)
 
   const normalizedQuery = query.trim().toLowerCase()
 
@@ -45,6 +47,16 @@ export function ScientistDirectory({
   }
 
   function handleDelete(id) {
+    const currentIndex = visiblePeople.findIndex(
+      (person) => person.id === id,
+    )
+  
+    const nextPerson =
+      visiblePeople[currentIndex + 1] ??
+      visiblePeople[currentIndex - 1]
+  
+    pendingFocusId.current = nextPerson?.id ?? 'reset'
+  
     setPeople((prev) =>
       prev.filter((person) => person.id !== id),
     )
@@ -56,6 +68,20 @@ export function ScientistDirectory({
     setMinIq(160)
     setSortBy('iq-desc')
   }
+
+  useLayoutEffect(() => {
+    const targetId = pendingFocusId.current
+  
+    if (targetId === null) return
+  
+    if (targetId === 'reset') {
+      resetButtonRef.current?.focus()
+    } else {
+      deleteButtonRefs.current.get(targetId)?.focus()
+    }
+  
+    pendingFocusId.current = null
+  }, [people])
 
   return (
     <section
@@ -131,6 +157,7 @@ export function ScientistDirectory({
         </output>
 
         <button
+          ref={resetButtonRef}
           type="button"
           className={styles.action}
           onClick={handleReset}
@@ -162,13 +189,20 @@ export function ScientistDirectory({
                 </dl>
 
                 <button
-                  type="button"
-                  className={styles.deleteButton}
-                  onClick={() => handleDelete(person.id)}
-                  aria-label={`Delete ${person.name}`}
-                >
-                  Delete
-                </button>
+  ref={(element) => {
+    if (element) {
+      deleteButtonRefs.current.set(person.id, element)
+    } else {
+      deleteButtonRefs.current.delete(person.id)
+    }
+  }}
+  type="button"
+  className={styles.deleteButton}
+  onClick={() => handleDelete(person.id)}
+  aria-label={`Delete ${person.name}`}
+>
+  Delete
+</button>
               </article>
             </li>
           ))}

@@ -106,23 +106,23 @@ Repository:
 ### 2.5 Verification Package
 
 #### 2.5.1 Functional Testing
-- [ ] Verify case-insensitive search.
-- [ ] Verify numeric IQ filter.
-- [ ] Verify IQ and age sorting.
-- [ ] Verify delete and reset.
+- [x] Verify case-insensitive search.
+- [x] Verify numeric IQ filter.
+- [x] Verify IQ and age sorting.
+- [x] Verify delete and reset.
 
 #### 2.5.2 React Architecture Audit
-- [ ] Verify no useEffect-based derived state.
-- [ ] Verify immutable updates and stable keys.
-- [ ] Inspect React DevTools Profiler.
-- [ ] Check render behavior during search.
-- [ ] Verify focus behavior after deletion.
+- [x] Verify no useEffect-based derived state.
+- [x] Verify immutable updates and stable keys.
+- [x] Inspect React DevTools Profiler.
+- [x] Check render behavior during search.
+- [x] Verify focus behavior after deletion.
 
 #### 2.5.3 Quality Checks
-- [ ] Run ESLint.
-- [ ] Run production build.
-- [ ] Inspect browser console.
-- [ ] Capture verification screenshots.
+- [x] Run ESLint.
+- [x] Run production build.
+- [x] Inspect browser console.
+- [x] Capture verification screenshots.
 
 ### 2.6 Delivery Package
 
@@ -334,3 +334,31 @@ Next:
 - Final architecture audit.
 
 Commit: Pending
+
+
+
+### Entry 009 — React Architecture & Focus Audit
+
+WBS mapping: 2.5.2, 2.5.3
+
+Completed:
+- Verified pure derived-state filtering and sorting.
+- Inspected React DevTools Profiler.
+- Verified stable entity keys.
+- Fixed keyboard focus loss after deletion.
+- Implemented focus restoration using refs.
+- Verified fallback focus to Reset Directory.
+
+Verification:
+- React Profiler: PASS (1 recorded commit)
+- Focus after deletion: PASS
+- Focus fallback to Reset: PASS
+- ESLint: PASS
+- Production build: PASS
+
+Evidence:
+- evidence/screenshots/01_react_profiler.png
+- evidence/screenshots/02_delete_focus.png
+
+Next:
+- Final documentation and Git review.

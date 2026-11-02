@@ -159,3 +159,90 @@ AF-03: Risk identified; runtime validation pending.
 
 Additional independent failures must only be recorded
 if supported by actual verification evidence.
+
+
+## Exercise 2 — AI Failure Audit
+
+### AF-04 — Controlled Number Input Leading Zero
+
+Status: Resolved
+
+Problem:
+The AI-generated IQ input handler immediately
+replaced an empty value with numeric zero.
+
+Result:
+Users could encounter input values such as 0200
+when clearing and re-entering numbers.
+
+Root cause:
+The controlled input could not temporarily
+represent an empty value.
+
+Correction:
+Allow an empty string while the input is cleared.
+Use valueAsNumber for valid numeric input.
+
+Verification:
+- Empty input works.
+- Re-entering numeric values works.
+- IQ filtering remains correct.
+
+### AF-05 — Handler Scope Error
+
+Status: Resolved
+
+Problem:
+handleDelete and handleReset were accidentally
+nested inside handleIqChange during integration.
+
+Result:
+React threw ReferenceError:
+handleReset is not defined.
+
+Correction:
+Moved both functions to ScientistDirectory scope.
+
+Verification:
+- Directory renders correctly.
+- Delete and Reset operate normally.
+
+### AF-06 — Keyboard Focus Loss After Deletion
+
+Status: Resolved
+
+Problem:
+Deleting the currently focused record removed
+its button from the DOM.
+
+Result:
+Keyboard focus returned to the body element.
+
+Detection:
+Chrome DevTools document.activeElement inspection.
+
+Correction:
+Implemented focus management with refs and
+useLayoutEffect.
+
+Focus moves to a surviving Delete button or
+Reset Directory when no records remain.
+
+Verification:
+- Focus remains usable after deletion.
+- Focus fallback to Reset works.
+- ESLint and production build pass.
+
+## Exercise 2 Audit Summary
+
+Confirmed implementation failures:
+- AF-04: Input handling
+- AF-05: Handler scope
+- AF-06: Focus management
+
+All three issues were corrected and verified.
+
+Note:
+AF-05 occurred during manual code integration.
+It should not be classified as a confirmed
+AI-generated defect without evidence of origin.
