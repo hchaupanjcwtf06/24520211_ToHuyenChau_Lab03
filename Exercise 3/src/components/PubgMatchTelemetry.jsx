@@ -126,26 +126,53 @@ if (view.status === 'ERROR') {
     )
   }
   
-  return (
-    <article className={styles.panel} aria-live="polite">
-      <h2>{view.data.name}</h2>
-      <dl>
-        <dt>Map</dt>
-        <dd>{view.data.map}</dd>
-        <dt>Phase</dt>
-        <dd>{view.data.phase}</dd>
-        <dt>Alive</dt>
-        <dd>{view.data.alive}</dd>
-        <dt>Kills</dt>
-        <dd>{view.data.kills}</dd>
-        <dt>WWCD Probability</dt>
-        <dd>{view.data.wwcdProb}</dd>
-        <dt>Status</dt>
-        <dd>{view.data.status}</dd>
+  
+return (
+    <article
+      className={`${styles.panel} ${styles.telemetry}`}
+      aria-live="polite"
+    >
+      <header className={styles.telemetryHeader}>
+        <div>
+          <p className={styles.eyebrow}>LIVE TELEMETRY</p>
+          <h2>{view.data.name}</h2>
+          <p className={styles.mapInfo}>
+            {view.data.map} / {view.data.phase}
+          </p>
+        </div>
+  
+        <span className={styles.onlineBadge}>
+          RADAR ONLINE
+        </span>
+      </header>
+  
+      <dl className={styles.metricsGrid}>
+        <div className={styles.metric}>
+          <dt>Alive</dt>
+          <dd>{view.data.alive}</dd>
+        </div>
+  
+        <div className={styles.metric}>
+          <dt>Kills</dt>
+          <dd>{view.data.kills}</dd>
+        </div>
+  
+        <div className={styles.metric}>
+          <dt>WWCD Probability</dt>
+          <dd>{view.data.wwcdProb}</dd>
+        </div>
       </dl>
+  
+      <section
+        className={styles.zoneStatus}
+        aria-label="Current zone status"
+      >
+        <h3>Zone Status</h3>
+        <p>{view.data.status}</p>
+      </section>
     </article>
   )
-}
+}  
 
 
 export function SquadSelector({ selectedId, onSelect }) {

@@ -68,10 +68,10 @@ Source: Lab 03, Slides 21–23.
 - [x] Match loading and content dimensions to minimize CLS.
 
 #### 3.4.2 Successful Telemetry
-- [ ] Display squad name and map.
-- [ ] Display match phase and alive players.
-- [ ] Display kills, WWCD probability, and zone status.
-- [ ] Use semantic markup and stable data presentation.
+- [x] Display squad name and map.
+- [x] Display match phase and alive players.
+- [x] Display kills, WWCD probability, and zone status.
+- [x] Use semantic markup and stable data presentation.
 
 #### 3.4.3 Error Recovery
 - [x] Render errors using section role="alert".
@@ -81,11 +81,11 @@ Source: Lab 03, Slides 21–23.
 - [x] Recover from ERROR to LOADING and SUCCESS.
 
 #### 3.4.4 Responsive & Accessible UI
-- [ ] Support a 375px viewport.
-- [ ] Verify keyboard navigation.
-- [ ] Verify visible focus indicators.
-- [ ] Prevent horizontal overflow.
-- [ ] Keep status and error messages accessible.
+- [x] Support a 375px viewport.
+- [x] Verify keyboard navigation.
+- [x] Verify visible focus indicators.
+- [x] Prevent horizontal overflow.
+- [x] Keep status and error messages accessible.
 
 ### 3.5 Verification & AI Audit
 
@@ -272,3 +272,29 @@ Next:
 - Style the complete PUBG telemetry dashboard.
 - Implement responsive squad selection.
 - Verify 375px layout.
+
+
+### Entry 007 — PUBG Dashboard & Responsive UI
+
+WBS mapping: 3.4.2, 3.4.4
+
+Completed:
+- Replaced Vite default global styling.
+- Implemented responsive squad selector.
+- Added active squad indicators.
+- Built telemetry metric grid.
+- Added zone-status panel.
+- Added 375px responsive layout.
+
+Verification:
+- Desktop layout: PASS (if verified)
+- 375px layout: PASS (if verified)
+- Horizontal overflow: PASS (if verified)
+- Keyboard navigation: PASS (if verified)
+- ESLint: PASS (if verified)
+- Production build: PASS (if verified)
+
+Next:
+- Verify simulated cancellation behavior.
+- Audit CLS and accessibility.
+- Document evidence.
