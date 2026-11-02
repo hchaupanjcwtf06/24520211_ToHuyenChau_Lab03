@@ -108,14 +108,14 @@ Source: Lab 03, Slides 21–23.
 - [x] Measure CLS and target 0.00.
 - [x] Verify 375px responsiveness.
 - [x] Verify keyboard interaction.
-- [ ] Check browser console for errors and warnings.
+- [x] Check browser console for errors and warnings.
 
 #### 3.5.4 Quality & AI Failure Audit
-- [ ] Run ESLint.
-- [ ] Run production build.
-- [ ] Document confirmed AI-related issues if found.
-- [ ] Update the shared root AI_FAILURE_AUDIT.md.
-- [ ] Save supporting DevTools screenshots.
+- [x] Run ESLint.
+- [x] Run production build.
+- [x] Document confirmed AI-related issues if found.
+- [x] Update the shared root AI_FAILURE_AUDIT.md.
+- [x] Save supporting DevTools screenshots.
 
 ### 3.6 Delivery Package
 
