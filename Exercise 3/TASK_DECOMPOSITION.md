@@ -90,23 +90,23 @@ Source: Lab 03, Slides 21–23.
 ### 3.5 Verification & AI Audit
 
 #### 3.5.1 Functional Verification
-- [ ] Verify all four state-machine states.
-- [ ] Verify squad switching.
-- [ ] Verify successful telemetry rendering.
-- [ ] Verify packet-loss error handling.
-- [ ] Verify retry recovery.
+- [x] Verify all four state-machine states.
+- [x] Verify squad switching.
+- [x] Verify successful telemetry rendering.
+- [x] Verify packet-loss error handling.
+- [x] Verify retry recovery.
 
 #### 3.5.2 Network & Race-Condition Audit
 - [ ] Enable Slow 3G in Chrome DevTools.
-- [ ] Rapidly switch CES → TE → GE.
-- [ ] Confirm obsolete requests are canceled.
-- [ ] Confirm no stale-response overwrite.
-- [ ] Confirm intentional aborts do not show error alerts.
+- [x] Rapidly switch CES → TE → GE.
+- [x] Confirm obsolete requests are canceled.
+- [x] Confirm no stale-response overwrite.
+- [x] Confirm intentional aborts do not show error alerts.
 
 #### 3.5.3 Visual & Accessibility Audit
-- [ ] Inspect loading skeleton dimensions.
+- [x] Inspect loading skeleton dimensions.
 - [ ] Measure CLS and target 0.00.
-- [ ] Verify 375px responsiveness.
+- [x] Verify 375px responsiveness.
 - [ ] Verify keyboard interaction.
 - [ ] Check browser console for errors and warnings.
 
