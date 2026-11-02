@@ -268,3 +268,26 @@ Verification:
 - Spinner controls: PASS
 
 Commit: Pending feature commit.
+
+### Entry 006 — Delete, Reset & Live Status
+
+WBS mapping: 2.3.4, 2.4.2
+
+Completed:
+- Implemented immutable deletion by stable ID.
+- Implemented dataset and filter reset.
+- Added accessible live result counter.
+- Added empty-state feedback.
+- Added accessible delete buttons.
+
+Verification:
+- Delete: PASS
+- Reset: PASS
+- Live result count: PASS
+- Empty state: PASS
+- Keyboard button activation: PASS
+- ESLint: PASS
+- Production build: PASS
+
+Pending:
+- React DevTools Profiler and focus audit.

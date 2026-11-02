@@ -9,7 +9,7 @@ export function ScientistDirectory({
   const iqId = useId()
   const sortId = useId()
 
-  const [people] = useState(initialData)
+  const [people, setPeople] = useState(initialData)
   const [query, setQuery] = useState('')
   const [minIq, setMinIq] = useState(160)
   const [sortBy, setSortBy] = useState('iq-desc')
@@ -30,20 +30,33 @@ export function ScientistDirectory({
       return b.iq - a.iq
     })
 
-  
-function handleIqChange(event) {
-    if (event.target.value === '') {
-      setMinIq('')
-      return
-    }
-  
-    const value = event.target.valueAsNumber
-  
-    if (!Number.isNaN(value)) {
-      setMinIq(value)
-    }
-  }
-  
+
+    function handleIqChange(event) {
+        if (event.target.value === '') {
+          setMinIq('')
+          return
+        }
+    
+        const value = event.target.valueAsNumber
+    
+        if (!Number.isNaN(value)) {
+          setMinIq(value)
+        }
+      }
+    
+      function handleDelete(id) {
+        setPeople((prev) =>
+          prev.filter((person) => person.id !== id)
+        )
+      }
+    
+      function handleReset() {
+        setPeople([...initialData])
+        setQuery('')
+        setMinIq(160)
+        setSortBy('iq-desc')
+      }
+    
   return (
     <section aria-labelledby="directory-heading">
       <h2 id="directory-heading">
@@ -83,23 +96,44 @@ function handleIqChange(event) {
         </select>
       </form>
 
-      <ul>
-        {visiblePeople.map((person) => (
-          <li key={person.id}>
-            <article>
-              <h3>{person.name}</h3>
+<output role="status" aria-live="polite">
+  Found {visiblePeople.length} pioneers
+</output>
 
-              <dl>
-                <dt>Age</dt>
-                <dd>{person.age}</dd>
+<button type="button" onClick={handleReset}>
+  Reset Directory
+</button>
 
-                <dt>IQ</dt>
-                <dd>{person.iq}</dd>
-              </dl>
-            </article>
-          </li>
-        ))}
-      </ul>
+      
+{visiblePeople.length === 0 ? (
+  <p>No matching scientists found.</p>
+) : (
+  <ul>
+    {visiblePeople.map((person) => (
+      <li key={person.id}>
+        <article>
+          <h3>{person.name}</h3>
+
+          <dl>
+            <dt>Age</dt>
+            <dd>{person.age}</dd>
+
+            <dt>IQ</dt>
+            <dd>{person.iq}</dd>
+          </dl>
+
+          <button
+            type="button"
+            onClick={() => handleDelete(person.id)}
+            aria-label={`Delete ${person.name}`}
+          >
+            Delete
+          </button>
+        </article>
+      </li>
+    ))}
+  </ul>
+)}
     </section>
   )
 }
