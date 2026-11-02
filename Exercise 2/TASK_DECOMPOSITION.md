@@ -50,9 +50,9 @@ Repository:
 ### 2.2 Data & State Package
 
 #### 2.2.1 Scientist Dataset
-- [ ] Define six initial scientist records.
-- [ ] Assign stable unique IDs.
-- [ ] Define name, age and IQ fields.
+- [x] Define six initial scientist records.
+- [x] Assign stable unique IDs.
+- [x] Define name, age and IQ fields.
 
 #### 2.2.2 State Management
 - [ ] Implement people state.
@@ -199,5 +199,27 @@ Verification:
 
 Next:
 - Implement normalized scientist dataset.
+
+Commit: Pending
+
+### Entry 003 — Scientist Dataset & Initial Rendering
+
+WBS mapping: 2.2.1, 2.2.2 (partial)
+
+Completed:
+- Created six scientist records with stable IDs.
+- Created ScientistDirectory functional component.
+- Initialized people state.
+- Rendered semantic scientist records.
+- Integrated ScientistDirectory into App.
+
+Verification:
+- Six records displayed: PASS
+- Stable IDs: PASS
+- ESLint: PASS
+- Production build: PASS
+
+Next:
+- Search, numeric IQ filter and immutable sorting.
 
 Commit: Pending
