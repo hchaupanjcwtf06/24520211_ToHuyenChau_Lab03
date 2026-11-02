@@ -147,19 +147,30 @@ if (view.status === 'ERROR') {
   )
 }
 
+
 export function SquadSelector({ selectedId, onSelect }) {
-  return (
-    <nav aria-label="PUBG squad selection">
-      {PUBG_VN_SQUADS.map((squad) => (
-        <button
-          key={squad.id}
-          type="button"
-          aria-pressed={selectedId === squad.id}
-          onClick={() => onSelect(squad.id)}
-        >
-          {squad.name}
-        </button>
-      ))}
-    </nav>
-  )
-}
+    return (
+      <nav
+        className={styles.squadSelector}
+        aria-label="PUBG squad selection"
+      >
+        {PUBG_VN_SQUADS.map((squad) => (
+          <button
+            key={squad.id}
+            type="button"
+            className={styles.squadButton}
+            aria-pressed={selectedId === squad.id}
+            onClick={() => onSelect(squad.id)}
+          >
+            <span className={styles.squadCode}>
+              {squad.id.toUpperCase()}
+            </span>
+  
+            <span className={styles.squadName}>
+              {squad.name}
+            </span>
+          </button>
+        ))}
+      </nav>
+    )
+  }  
