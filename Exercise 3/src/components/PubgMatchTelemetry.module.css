@@ -1,0 +1,98 @@
+
+.panel {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 220px;
+    padding: 24px;
+    border: 1px solid #334155;
+    background: #111827;
+    color: #f8fafc;
+  }
+  
+  .skeleton {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(135deg, #0f172a, #1e3a5f);
+  }
+  
+  .loadingText {
+    margin: 0 0 24px;
+    font-weight: 700;
+    color: #93c5fd;
+  }
+  
+  .skeletonContent {
+    display: grid;
+    gap: 16px;
+  }
+  
+  .skeletonTitle,
+  .skeletonLine,
+  .skeletonShort {
+    display: block;
+    height: 16px;
+    background: #334d70;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  
+  .skeletonTitle {
+    width: 60%;
+    height: 28px;
+  }
+  
+  .skeletonLine {
+    width: 100%;
+  }
+  
+  .skeletonShort {
+    width: 42%;
+  }
+  
+  .error {
+    border-color: #ef4444;
+    background: #301b27;
+  }
+  
+  .error h2 {
+    margin-top: 0;
+    color: #fca5a5;
+  }
+  
+  .retryButton {
+    padding: 12px 18px;
+    border: 2px solid #93c5fd;
+    background: #172554;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+  .retryButton:hover {
+    background: #1e40af;
+  }
+  
+  .retryButton:focus-visible {
+    outline: 3px solid #facc15;
+    outline-offset: 4px;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 0.4;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .skeletonTitle,
+    .skeletonLine,
+    .skeletonShort {
+      animation: none;
+    }
+  }
+  

@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { PUBG_VN_SQUADS } from '../data/pubgSquads.js'
 import { fetchKraftonPubgTelemetry } from '../services/telemetry.js'
+import styles from './PubgMatchTelemetry.module.css'
 
 const INITIAL_VIEW = {
   status: 'IDLE',
@@ -76,27 +77,57 @@ export function PubgMatchTelemetry({ squadId = 'te' }) {
     return <p role="status">Radar is idle.</p>
   }
 
-  if (view.status === 'LOADING') {
+  
+if (view.status === 'LOADING') {
     return (
-      <section aria-busy="true" aria-live="polite">
-        <p>Syncing KRAFTON Radar...</p>
+      <section
+        className={`${styles.panel} ${styles.skeleton}`}
+        aria-busy="true"
+        aria-label="Loading PUBG match telemetry"
+      >
+        <p className={styles.loadingText} role="status">
+          Syncing KRAFTON Radar...
+        </p>
+  
+        <div className={styles.skeletonContent} aria-hidden="true">
+          <span className={styles.skeletonTitle} />
+          <span className={styles.skeletonLine} />
+          <span className={styles.skeletonLine} />
+          <span className={styles.skeletonShort} />
+        </div>
       </section>
     )
   }
+  
 
-  if (view.status === 'ERROR') {
+  
+if (view.status === 'ERROR') {
     return (
-      <section role="alert">
-        <p>Blue-Zone Link Lost: {view.error}</p>
-        <button type="button" onClick={handleRetry}>
+      <section className={`${styles.panel} ${styles.error}`} role="alert">
+        <h2>Satellite Connection Lost</h2>
+  
+        <p>
+          Blue-Zone Link Lost: {view.error}
+        </p>
+  
+        <p>
+          The telemetry request failed. Reconnect to retrieve
+          the latest simulated match data.
+        </p>
+  
+        <button
+          type="button"
+          className={styles.retryButton}
+          onClick={handleRetry}
+        >
           Reconnect Satellite
         </button>
       </section>
     )
   }
-
+  
   return (
-    <article aria-live="polite">
+    <article className={styles.panel} aria-live="polite">
       <h2>{view.data.name}</h2>
       <dl>
         <dt>Map</dt>

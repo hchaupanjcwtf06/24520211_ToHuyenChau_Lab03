@@ -62,10 +62,10 @@ Source: Lab 03, Slides 21–23.
 ### 3.4 Loading, Success & Error UI
 
 #### 3.4.1 Skeleton Radar
-- [ ] Implement a 220px Blue-Zone skeleton.
-- [ ] Add an accessible loading announcement.
-- [ ] Set aria-busy appropriately.
-- [ ] Match loading and content dimensions to minimize CLS.
+- [x] Implement a 220px Blue-Zone skeleton.
+- [x] Add an accessible loading announcement.
+- [x] Set aria-busy appropriately.
+- [x] Match loading and content dimensions to minimize CLS.
 
 #### 3.4.2 Successful Telemetry
 - [ ] Display squad name and map.
@@ -74,11 +74,11 @@ Source: Lab 03, Slides 21–23.
 - [ ] Use semantic markup and stable data presentation.
 
 #### 3.4.3 Error Recovery
-- [ ] Render errors using section role="alert".
-- [ ] Never use window.alert().
-- [ ] Implement the Reconnect Satellite button.
-- [ ] Retry using a dedicated retry counter.
-- [ ] Recover from ERROR to LOADING and SUCCESS.
+- [x] Render errors using section role="alert".
+- [x] Never use window.alert().
+- [x] Implement the Reconnect Satellite button.
+- [x] Retry using a dedicated retry counter.
+- [x] Recover from ERROR to LOADING and SUCCESS.
 
 #### 3.4.4 Responsive & Accessible UI
 - [ ] Support a 375px viewport.
@@ -245,3 +245,30 @@ Next:
 - Implement 220px skeleton radar.
 - Complete responsive telemetry dashboard.
 - Finalize error recovery UI.
+
+
+### Entry 006 — Skeleton Radar & Error Recovery
+
+WBS mapping: 3.4.1, 3.4.3
+
+Completed:
+- Implemented Blue-Zone skeleton with a 220px minimum height.
+- Added accessible loading feedback.
+- Added reduced-motion support.
+- Implemented accessible error alerts.
+- Preserved retry recovery using retryTick.
+- Applied shared panel sizing across telemetry states.
+
+Verification:
+- Loading UI: PASS (if verified)
+- Error alert: PASS (if verified)
+- Retry recovery: PASS (if verified)
+- ESLint: PASS (if verified)
+- Production build: PASS (if verified)
+- CLS measurement: Pending
+- Slow 3G audit: Pending
+
+Next:
+- Style the complete PUBG telemetry dashboard.
+- Implement responsive squad selection.
+- Verify 375px layout.
