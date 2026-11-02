@@ -246,3 +246,56 @@ Note:
 AF-05 occurred during manual code integration.
 It should not be classified as a confirmed
 AI-generated defect without evidence of origin.
+
+### AF-07 — Synchronous State Update Inside useEffect
+
+Exercise: 3
+Status: Resolved
+
+Problem:
+The initial PubgMatchTelemetry implementation called
+setView({ status: 'LOADING' }) synchronously inside useEffect.
+
+Detection:
+ESLint rule react-hooks/set-state-in-effect.
+
+Impact:
+The implementation could trigger unnecessary cascading renders.
+
+Correction:
+Removed the synchronous state update from the effect.
+Derived LOADING from the current request identity and the
+latest completed request result.
+
+Verification:
+- ESLint: PASS (after verification)
+- Production build: PASS (after verification)
+- Squad switching: PASS (after verification)
+
+### AF-08 — Focus Loss During Telemetry Retry
+
+Exercise: 3
+Status: Resolved
+
+Problem:
+The Retry button was removed from the DOM when
+the telemetry state changed from ERROR to LOADING.
+
+Observed failure:
+document.activeElement returned body after retry.
+
+Initial correction:
+Focused the loading skeleton using useLayoutEffect,
+but focus was lost again when loading completed.
+
+Final correction:
+Introduced a persistent status element with
+tabIndex="-1" and role="status".
+
+The Retry handler transfers focus to this element
+before changing the request state.
+
+Verification:
+- Focus remains on the status element after loading.
+- Focus remains after SUCCESS.
+- Verified using Chrome DevTools document.activeElement.

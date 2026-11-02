@@ -105,9 +105,9 @@ Source: Lab 03, Slides 21–23.
 
 #### 3.5.3 Visual & Accessibility Audit
 - [x] Inspect loading skeleton dimensions.
-- [ ] Measure CLS and target 0.00.
+- [x] Measure CLS and target 0.00.
 - [x] Verify 375px responsiveness.
-- [ ] Verify keyboard interaction.
+- [x] Verify keyboard interaction.
 - [ ] Check browser console for errors and warnings.
 
 #### 3.5.4 Quality & AI Failure Audit
@@ -298,3 +298,24 @@ Next:
 - Verify simulated cancellation behavior.
 - Audit CLS and accessibility.
 - Document evidence.
+
+### Entry 010 — Retry Focus Management Fix
+
+WBS mapping: 3.4.3, 3.4.4, 3.5.3
+
+Issue:
+- Keyboard focus was lost after activating Reconnect Satellite.
+- Focus returned to body when the Retry button unmounted.
+
+Correction:
+- Introduced a persistent telemetry status element.
+- Moved focus to the status element before retry.
+- Preserved focus across LOADING and SUCCESS transitions.
+
+Verification:
+- Focus after Retry: PASS
+- Focus after telemetry success: PASS
+- ESLint: PASS (if verified)
+- Production build: PASS (if verified)
+
+Status: Resolved

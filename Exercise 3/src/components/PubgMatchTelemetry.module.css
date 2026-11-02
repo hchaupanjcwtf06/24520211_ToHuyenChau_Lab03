@@ -268,4 +268,23 @@
       grid-column: auto;
     }
   }
+
+  .panel:focus {
+    outline: none;
+  }
   
+  .panel:focus-visible {
+    outline: 3px solid #facc15;
+    outline-offset: 3px;
+  }
+
+  .focusStatus {
+    margin: 0 0 12px;
+    color: #93c5fd;
+    font-size: 0.875rem;
+  }
+  
+  .focusStatus:focus {
+    outline: 3px solid #facc15;
+    outline-offset: 3px;
+  }
